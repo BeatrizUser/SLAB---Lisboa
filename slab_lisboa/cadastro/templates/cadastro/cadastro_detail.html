@@ -1,0 +1,13 @@
+{% extends "cadastro/base.html" %}
+
+{% block title %}{{ cad.nome_completo }}{% endblock %}
+
+{% block content %}
+        <article>
+            <h3>{{ cadastro.nome_completo}}</h3>
+
+            <p>Cadastrado em {{ cadastro.created }} por {{ cadastro.author }}</p>
+
+        </article>
+        <a href="/cadastro">| Voltar |</a>
+{% endblock %}

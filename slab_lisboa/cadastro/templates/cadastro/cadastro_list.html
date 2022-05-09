@@ -1,0 +1,15 @@
+{% extends "cadastro/base.html" %}
+
+{% block title %} SLAB - Lisboa {% endblock %}
+
+{% block content %}
+    {% for cad in cadastro_list %}
+        <article>
+
+            <a href="/cadastro/{{cad.slug}}">{{ cad.nome_completo }}</a>
+
+            <h2>Cadastrado em {{ cad.created }} por {{ cad.author }}</h2>
+            
+        </article>
+    {% endfor %}
+{% endblock %}
