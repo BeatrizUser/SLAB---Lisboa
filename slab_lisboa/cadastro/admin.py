@@ -3,5 +3,5 @@ from .models import Cadastro
 
 @admin.register(Cadastro)
 class CadastroAdmin(admin.ModelAdmin):
-	list_display = ("nome_completo", "created",)
-	prepopulated_fields = {"slug": ("nome_completo",)}
+	list_display = ("nome_completo_aluno", "created",)
+	prepopulated_fields = {"slug": ("nome_completo_aluno",)}
