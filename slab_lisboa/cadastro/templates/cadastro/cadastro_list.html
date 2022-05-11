@@ -4,7 +4,7 @@
 
 {% block content %}
     {% for cad in cadastro_list %}
-          <a href="/cadastro/{{cad.slug}}" class="list-group-item list-group-item-action">
+    <br><a href="/cadastro/{{cad.slug}}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{ cad.nome_completo_aluno }}</h5>
               <small class="text-muted">Criador por {{ cad.author }}</small>

@@ -7,19 +7,25 @@
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{ cadastro.nome_completo_aluno }}</h5>
               <small class="text-muted">Criador por {{ cadastro.author }}</small>
-            </div>
+            </div><br>
             
+            <small class="text-muted">Email:</small>
             <p class="mb-1">{{cadastro.email}}</p>
+            <small class="text-muted">Nome do Aluno:</small>
             <p class="mb-1">{{cadastro.nome_completo_aluno}}</p>
+            <small class="text-muted">Data de Nascimento:</small>
             <p class="mb-1">{{cadastro.data_de_Nascimento_do_Aluno}}</p>
+            <small class="text-muted">Morada:</small>
             <p class="mb-1">{{cadastro.morada}}</p>
-            <p class="mb-1">{{nome_completo_responsavel}}</p>
-            <p class="mb-1">{{email_do_responsavel}}</p>
+            <small class="text-muted">Nome do Responsavel:</small>
+            <p class="mb-1">{{cadastro.nome_completo_responsavel}}</p>
+            <small class="text-muted">Email do Responsavel:</small>
+            <p class="mb-1">{{cadastro.email_do_responsavel}}</p>
+            <small class="text-muted">Documento de Identificacao:</small>
             <p class="mb-1">{{cadastro.documento_de_id}}</p>
-            <img src="slab_lisboa/{{cadastro.foto}}" alt="">
-             
-            <small class="text-muted">Cadastrado em {{ cadastro.created }}</small>
-          </a>
+
+            <br><small class="text-muted">Cadastrado em {{ cadastro.created }}</small>
+          </a><br>
           <a href="/cadastro/"><button type="submit" class="btn btn-dark btn-sm">Voltar</button></a>
           <a href="/admin/cadastro/cadastro/"><button type="submit" class="btn btn-secondary btn-sm">Todos os Alunos</button></a>
           <a href="/admin/cadastro/cadastro/{{cadastro.id}}/change/"><button type="submit" class="btn btn-secondary btn-sm">Editar Cadastro</button></a>
