@@ -1,13 +1,30 @@
 {% extends "cadastro/base.html" %}
 
-{% block title %}{{ cad.nome_completo }}{% endblock %}
+{% block title %}{{ cadastro.nome_completo_aluno }}{% endblock %}
 
 {% block content %}
-        <article>
-            <h3>{{ cadastro.nome_completo}}</h3>
-
-            <p>Cadastrado em {{ cadastro.created }} por {{ cadastro.author }}</p>
-
-        </article>
-        <a href="/cadastro">| Voltar |</a>
+        <a href="/cadastro/{{cadastro.slug}}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ cadastro.nome_completo_aluno }}</h5>
+              <small class="text-muted">Criador por {{ cadastro.author }}</small>
+            </div>
+            
+            <p class="mb-1">{{cadastro.email}}</p>
+            <p class="mb-1">{{cadastro.nome_completo_aluno}}</p>
+            <p class="mb-1">{{cadastro.data_de_Nascimento_do_Aluno}}</p>
+            <p class="mb-1">{{cadastro.morada}}</p>
+            <p class="mb-1">{{nome_completo_responsavel}}</p>
+            <p class="mb-1">{{email_do_responsavel}}</p>
+            <p class="mb-1">{{cadastro.documento_de_id}}</p>
+            <img src="slab_lisboa/{{cadastro.foto}}" alt="">
+             
+            <small class="text-muted">Cadastrado em {{ cadastro.created }}</small>
+          </a>
+          <a href="/cadastro/"><button type="submit" class="btn btn-dark btn-sm">Voltar</button></a>
+          <a href="/admin/cadastro/cadastro/"><button type="submit" class="btn btn-secondary btn-sm">Todos os Alunos</button></a>
+          <a href="/admin/cadastro/cadastro/{{cadastro.id}}/change/"><button type="submit" class="btn btn-secondary btn-sm">Editar Cadastro</button></a>
+          <a href="/admin/cadastro/cadastro/add/"><button type="submit" class="btn btn-secondary btn-sm">Cadastrar Novo(a) Aluno</button></a>
+          
+          
+          
 {% endblock %}

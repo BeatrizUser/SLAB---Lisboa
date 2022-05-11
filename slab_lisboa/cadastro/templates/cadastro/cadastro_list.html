@@ -4,12 +4,13 @@
 
 {% block content %}
     {% for cad in cadastro_list %}
-        <article>
-
-            <a href="/cadastro/{{cad.slug}}">{{ cad.nome_completo }}</a>
-
-            <h2>Cadastrado em {{ cad.created }} por {{ cad.author }}</h2>
-            
-        </article>
+          <a href="/cadastro/{{cad.slug}}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ cad.nome_completo_aluno }}</h5>
+              <small class="text-muted">Criador por {{ cad.author }}</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted">Cadastrado em {{ cad.created }}</small>
+          </a>
     {% endfor %}
 {% endblock %}

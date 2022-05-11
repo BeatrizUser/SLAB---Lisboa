@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.utils import timezone
 
 def upload_image_aluno(instance, filename):
-    return f"{instance.nome_completo_aluno}"
+    return f"{instance.nome_completo_aluno}-{filename}"
 
 class Cadastro(models.Model):
 
