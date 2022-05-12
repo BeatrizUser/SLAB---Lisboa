@@ -3,6 +3,6 @@ from . import views
 
 app_name = "Cadastro"
 urlpatterns = [
-    path("lista/", views.CadListView.as_view(), name="list"),
+    path("", views.CadListView.as_view(), name="list"),
     path("<slug:slug>/", views.CadDetailView.as_view(), name="detail")
 ]
