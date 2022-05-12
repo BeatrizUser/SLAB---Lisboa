@@ -18,7 +18,7 @@ from django.urls import include, path
 from cadastro import views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("", admin.site.urls),
     path("lista/", include("cadastro.urls", namespace="lista")),
     path("lista/", views.CadListView.as_view(), name="list"),
     path("<slug:slug>/", views.CadDetailView.as_view(), name="detail")
