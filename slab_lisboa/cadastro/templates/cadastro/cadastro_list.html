@@ -7,7 +7,7 @@
       <span class="navbar-brand mb-0 h2">Lista de Alunos</span>
     </nav>
     {% for cad in cadastro_list %}
-      <a href="/cadastro/{{cad.slug}}" class="list-group-item list-group-item-action" style="margin-bottom: 5px;">
+      <a href="/{{cad.slug}}" class="list-group-item list-group-item-action" style="margin-bottom: 5px;">
         <div class="d-flex">
           <div>
             <img class="foto-detail" src=".{{ cad.foto.url }}" style="width: 70px;height: 70px;border-radius: 100%;box-shadow: 4px 2px 11px 0px #00000052;object-fit: cover;">
