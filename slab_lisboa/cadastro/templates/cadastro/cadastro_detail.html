@@ -4,10 +4,13 @@
 
 {% block content %}
         <a href="/cadastro/{{cadastro.slug}}" class="list-group-item list-group-item-action">
+              <small class="text-muted">Ficha cadastral:</small>
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{ cadastro.nome_completo_aluno }}</h5>
               <small class="text-muted">Criador por {{ cadastro.author }}</small>
             </div><br>
+
+            <img class="foto-detail" src="..{{ cadastro.foto.url }}" style="max-width: 174px;border-radius: 10px;box-shadow: 4px 2px 11px 0px #00000052;"><br><br>
             
             <small class="text-muted">Email:</small>
             <p class="mb-1">{{cadastro.email}}</p>

@@ -19,7 +19,7 @@ from cadastro import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("cadastro/", include("cadastro.urls", namespace="lista")),
+    path("", include("cadastro.urls", namespace="lista")),
     path("lista/", views.CadListView.as_view(), name="list"),
     #path("<slug:slug>/", views.CadDetailView.as_view(), name="detail")
 ]

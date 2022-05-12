@@ -3,14 +3,25 @@
 {% block title %} SLAB - Lisboa {% endblock %}
 
 {% block content %}
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h2">Lista de Alunos</span>
+    </nav>
     {% for cad in cadastro_list %}
-    <br><a href="/cadastro/{{cad.slug}}" class="list-group-item list-group-item-action">
+      <a href="/cadastro/{{cad.slug}}" class="list-group-item list-group-item-action" style="margin-bottom: 5px;">
+        <div class="d-flex">
+          <div>
+            <img class="foto-detail" src=".{{ cad.foto.url }}" style="width: 70px;height: 70px;border-radius: 100%;box-shadow: 4px 2px 11px 0px #00000052;object-fit: cover;">
+          </div>
+          <div class="w-100" style="padding-left: 15px;">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{ cad.nome_completo_aluno }}</h5>
               <small class="text-muted">Criador por {{ cad.author }}</small>
             </div>
             <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            <small class="text-muted">Cadastrado em {{ cad.created }}</small>
-          </a>
+            <small class="text-muted">Cadastrado em {{ cad.created }}</small>  
+          </div>
+        </div>
+      </a>
+    </Row>
     {% endfor %}
 {% endblock %}
