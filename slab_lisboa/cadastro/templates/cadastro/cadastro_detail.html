@@ -4,13 +4,11 @@
 
 {% block content %}
         <a href="..{{ cadastro.foto.url }}" class="list-group-item list-group-item-action">
-              <small class="text-muted">Ficha cadastral:</small>
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">{{ cadastro.nome_completo_aluno }}</h5>
-              <small class="text-muted">Criador por {{ cadastro.author }}</small>
-            </div><br>
-            <img class="foto-detail" src="..{{ cadastro.foto.url }}" style="max-width: 174px;border-radius: 10px;box-shadow: 4px 2px 11px 0px #00000052;"><br><br>
-            
+            <div class="d-flex w-100 justify-content-center">
+              <img class="foto-detail" src="..{{ cadastro.foto.url }}" style="max-width: 150px;border-radius: 5px;box-shadow: 4px 2px 11px 0px #00000052;margin-bottom: 20px;"><br><br>
+            </div>
+            <small class="text-muted">Ficha cadastral:</small>
+            <div class="d-flex w-100 justify-content-between"><h5 class="mb-1">{{ cadastro.nome_completo_aluno }}</h5></div>
             <small class="text-muted">Idade:</small>
             <p class="mb-1"> {{ cadastro.idade }} </p>
             <small class="text-muted">Email:</small>
@@ -32,7 +30,7 @@
             <small class="text-muted">Alergico:</small>
             <p class="mb-1">{{cadastro.alergia}}</p>
 
-            <br><small class="text-muted">Cadastrado em {{ cadastro.created }}</small>
+            <Row class="d-flex w-100 justify-content-center" style="padding-top: 15px;"><small class="text-muted">Cadastrado em {{ cadastro.created.day }}/{{ cadastro.created.month }}/{{ cadastro.created.year }} por {{ cadastro.author }}</small></Row>
           </a><br>
           <a href="/"><button type="submit" class="btn btn-dark btn-sm" style="margin: 5px 0px 10px 40px;">Voltar</button></a>
           <a href="/admin/cadastro/cadastro/"><button type="submit" class="btn btn-secondary btn-sm" style="margin: 5px 0px 10px 0px;">Todos os Alunos</button></a>

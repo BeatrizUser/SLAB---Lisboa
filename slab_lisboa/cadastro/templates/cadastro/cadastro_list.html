@@ -1,6 +1,6 @@
 {% extends "cadastro/base.html" %}
 
-{% block title %} SLAB - Lisboa {% endblock %}
+{% block title %} SLAB - Lista de Alunos {% endblock %}
 
 {% block content %}
     <nav class="navbar navbar-light bg-light">
@@ -8,20 +8,20 @@
     </nav>
     {% for cad in cadastro_list %}
       <a href="/{{cad.slug}}" class="list-group-item list-group-item-action" style="margin-bottom: 5px;">
-        <div class="d-flex">
-          <div style="display: flex;justify-content: center;align-items: center;">
-            <img class="foto-detail" src=".{{ cad.foto.url }}" style="width: 80px;height: 80px;border-radius: 100%;box-shadow: 4px 2px 11px 0px #00000052;object-fit: cover;">
+          <div class="d-flex w-100 justify-content-around">
+            <h5 class="mb-1">{{ cad.nome_completo_aluno }}</h5>
           </div>
-          <div class="w-100" style="padding-left: 15px;">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">{{ cad.nome_completo_aluno }}</h5>
-              <small class="text-muted">Criador por {{ cad.author }}</small>
+          <div class="d-flex">
+            <div style="display: flex;justify-content: center;align-items: center;">
+              <img class="foto-detail" src=".{{ cad.foto.url }}" style="width: 80px;height: 80px;border-radius: 100%;box-shadow: 4px 2px 11px 0px #00000052;object-fit: cover;">
             </div>
+          <div class="w-100" style="padding-left: 15px;">
             <small class="text-muted">Comentarios:</small> 
             <p class="mb-1 text-muted" style="margin-bottom: 12px!important;">{{ cad.comentarios }}</p>
-            <small class="text-muted">Cadastrado em {{ cad.created }}</small>  
+             
           </div>
         </div>
+        <Row class="d-flex w-100 justify-content-center" style="padding-top: 15px;"><small class="text-muted">Cadastrado em {{ cad.created.day }}/{{ cad.created.month }}/{{ cad.created.year }} por {{ cad.author }}</small></Row>
       </a>
     </Row>
     {% endfor %}
