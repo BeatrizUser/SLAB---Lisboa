@@ -5,15 +5,16 @@
 {% block content %}
         <a href="..{{ cadastro.foto.url }}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-center">
-              <img class="foto-detail" src="..{{ cadastro.foto.url }}" style="max-width: 150px;border-radius: 5px;box-shadow: 4px 2px 11px 0px #00000052;margin-bottom: 20px;"><br><br>
+              <img class="foto-detail" src="..{{ cadastro.foto.url }}" style="width: 170px;height: 200px;border-radius: 5px;box-shadow: 4px 2px 11px 0px #00000052;margin-bottom: 20px;object-fit: cover;"><br><br>
             </div>
-            <small class="text-muted">Ficha cadastral:</small>
-            <div class="d-flex w-100 justify-content-between"><h5 class="mb-1">{{ cadastro.nome_completo_aluno }}</h5></div>
-            <small class="text-muted">Idade:</small>
-            <p class="mb-1"> {{ cadastro.idade }} </p>
-            <small class="text-muted">Email:</small>
-            <p class="mb-1">{{cadastro.email}}</p>
-            <small class="text-muted">Nome do Aluno:</small>
+            <div>
+              <small class="text-muted">Ficha cadastral:</small>
+              <div class="d-flex w-100 justify-content-between"><h5 class="mb-1">{{ cadastro.nome_completo_aluno }}</h5></div>
+              <small class="text-muted">Idade:</small>
+              <p class="mb-1"> {{ cadastro.idade }} </p>
+              <small class="text-muted">Email:</small>
+              <p class="mb-1">{{cadastro.email}}</p>
+              <small class="text-muted">Nome do Aluno:</small>
             <p class="mb-1">{{cadastro.nome_completo_aluno}}</p>
             <small class="text-muted">Data de Nascimento:</small>
             <p class="mb-1">{{cadastro.data_de_Nascimento_do_Aluno}}</p>
@@ -29,13 +30,16 @@
             <p class="mb-1">{{cadastro.comentarios}}</p>
             <small class="text-muted">Alergico:</small>
             <p class="mb-1">{{cadastro.alergia}}</p>
-
+            
             <Row class="d-flex w-100 justify-content-center" style="padding-top: 15px;"><small class="text-muted">Cadastrado em {{ cadastro.created.day }}/{{ cadastro.created.month }}/{{ cadastro.created.year }} por {{ cadastro.author }}</small></Row>
-          </a><br>
-          <a href="/"><button type="submit" class="btn btn-dark btn-sm" style="margin: 5px 0px 10px 40px;">Voltar</button></a>
-          <a href="/admin/cadastro/cadastro/"><button type="submit" class="btn btn-secondary btn-sm" style="margin: 5px 0px 10px 0px;">Todos os Alunos</button></a>
-          <a href="/admin/cadastro/cadastro/{{cadastro.id}}/change/"><button type="submit" class="btn btn-secondary btn-sm" style="margin: 5px 0px 10px 0px;">Editar Cadastro</button></a>
-          <a href="/admin/cadastro/cadastro/add/"><button type="submit" class="btn btn-info btn-sm" style="margin: 5px 0px 10px 100px;">Cadastrar Novo(a) Aluno</button></a>
+          </div>
+          </a>
+          <div class="d-block w-100 justify-content-between" style="margin-left: 25px;">
+            <a href="/"><button type="submit" class="btn btn-dark btn-sm" style="margin: 5px 2px;">Voltar</button></a>
+            <a href="/admin/cadastro/cadastro/"><button type="submit" class="btn btn-secondary btn-sm" style="margin: 5px 2px;">Todos os Alunos</button></a>
+            <a href="/admin/cadastro/cadastro/{{cadastro.id}}/change/"><button type="submit" class="btn btn-secondary btn-sm" style="margin: 5px 2px;">Editar Cadastro</button></a>
+            <a href="/admin/cadastro/cadastro/add/"><button type="submit" class="btn btn-info btn-sm" style="margin: 5px 2px;margin-left:50px;">Cadastrar Novo(a) Aluno</button></a>
+          </div>
           
           
           

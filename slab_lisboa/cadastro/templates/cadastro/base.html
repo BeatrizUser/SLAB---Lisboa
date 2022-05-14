@@ -8,16 +8,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <script src="{% static 'js/bootstrap.min.js' %}"></script></head>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script>
+        function show_menu(){
+            $("#nav-button").click(function show_navmenu(){
+            $("#nav-menu").html(`<h5>Teste</h5>`)
+        })
+    }
+        show_menu()
+ ; 
+    </script>
+</head>
 <body>
     <header>
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-text">
-             <img class="foto-detail" src="https://static.wixstatic.com/media/cd3b7e_472cb8a0fbdf43a5b83579298089ea2d~mv2.jpg/v1/fit/w_2500,h_1330,al_c/cd3b7e_472cb8a0fbdf43a5b83579298089ea2d~mv2.jpg" style="max-width: 135px;">
-             Sistema de Gestao e Gerenciamento da SLAB - Lisboa
-            </span>
-        </nav>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="/">
+                  <img class="foto-detail" src="https://static.wixstatic.com/media/cd3b7e_472cb8a0fbdf43a5b83579298089ea2d~mv2.jpg/v1/fit/w_2500,h_1330,al_c/cd3b7e_472cb8a0fbdf43a5b83579298089ea2d~mv2.jpg" style="max-width: 135px;">
+                  SLAB - Lisboa
+              </a>
+              <div id="nav-menu"></div>
+              <button onclick="show_menu()">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="container">
+              <div class="collapse navbar-collapse" id="navbarsExample07">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/admin">Admin<span class="sr-only">(atual)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Atualizar Lista</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/cadastro/cadastro/add/">Cadastrar Novo(a) Aluno</a>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-md-0">
+                  <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Search">
+                </form>
+              </div>
+            </div>
+          </nav>
     </header>
+
     <main>
         <div style="padding: 10px 10px 70px 10px;">
             {% block content %}
