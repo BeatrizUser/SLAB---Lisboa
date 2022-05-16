@@ -19,9 +19,9 @@ class Cadastro(models.Model):
     ('Possui Alergia', 'Sim'),
     )
 
+    nome_completo_aluno =  models.CharField(blank=False, max_length=255)
     author =  models.ForeignKey(User, on_delete=models.CASCADE)
     email = models.EmailField(max_length = 75)
-    nome_completo_aluno =  models.CharField(blank=False, max_length=255)
     data_de_Nascimento_do_Aluno = models.DateField('Data de Nascimento do Aluno', default=timezone.now)
     morada = models.CharField(max_length = 200)
     nome_completo_responsavel =  models.CharField('Nome do Responsavel', blank=False, max_length=255)

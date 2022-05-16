@@ -7,7 +7,7 @@
       <span class="navbar-brand mb-0 h2">Lista de Alunos</span>
     </nav>
     {% for cad in cadastro_list %}
-      <a href="detalhes/{{cad.slug}}" class="list-group-item list-group-item-action" style="margin-bottom: 5px;box-shadow: 4px 2px 11px 0px #00000015;">
+      <a href="/detalhes/{{cad.slug}}" class="list-group-item list-group-item-action" style="margin-bottom: 5px;box-shadow: 4px 2px 11px 0px #00000015;">
           <div class="d-flex w-100 justify-content-around">
             <h5 class="mb-1">{{ cad.nome_completo_aluno }}</h5>
           </div>
@@ -17,7 +17,9 @@
             </div>
           <div class="w-100" style="padding-left: 15px;">
             <small class="text-muted">Comentarios:</small> 
-            <p class="mb-1 text-muted" style="margin-bottom: 5px!important;">{{ cad.comentarios }}</p>
+            <p class="text-muted" style="margin-bottom: 5px!important;">{{ cad.comentarios|truncatechars:70 }}</p>
+            <small class="text-muted">Responsavel:</small> 
+            <p class="text-muted" style="margin-bottom: 5px!important;">{{ cad.nome_completo_responsavel}}</p>
           </div>
         </div>
         <Row class="d-flex w-100 justify-content-center"><small class="text-muted">Cadastrado em {{ cad.created.day }}/{{ cad.created.month }}/{{ cad.created.year }} por {{ cad.author }}</small></Row>
