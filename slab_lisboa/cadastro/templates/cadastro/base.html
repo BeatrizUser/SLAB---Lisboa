@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,12 +11,12 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script>
         function show_menu(){
-            $("#nav-button").click(function show_navmenu(){
-            $("#nav-menu").html(`<h5>Teste</h5>`)
-        })
-    }
-        show_menu()
- ; 
+            let navmenu = document.getElementById('navbar');
+                navmenu.classList.toggle('show');     
+    }; 
+
+    // url para buscar /busca/?search=
+
     </script>
 </head>
 <body>
@@ -26,12 +26,11 @@
                   <img class="foto-detail" src="https://static.wixstatic.com/media/cd3b7e_472cb8a0fbdf43a5b83579298089ea2d~mv2.jpg/v1/fit/w_2500,h_1330,al_c/cd3b7e_472cb8a0fbdf43a5b83579298089ea2d~mv2.jpg" style="max-width: 135px;">
                   SLAB - Lisboa
               </a>
-              <div id="nav-menu"></div>
-              <button onclick="show_menu()">
+              <button onclick="show_menu()" style="border: none;">
                 <span class="navbar-toggler-icon"></span>
               </button>
             <div class="container">
-              <div class="collapse navbar-collapse" id="navbarsExample07">
+              <div class="collapse navbar-collapse" id="navbar" style="animation: 1s easy;">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
                     <a class="nav-link" href="/admin">Admin<span class="sr-only">(atual)</span></a>
@@ -44,7 +43,7 @@
                   </li>
                 </ul>
                 <form class="form-inline my-2 my-md-0">
-                  <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Search">
+                  <input class="form-control" type="text" name="search" placeholder="Pesquisa" aria-label="Search">
                 </form>
               </div>
             </div>
@@ -52,10 +51,16 @@
     </header>
 
     <main>
-        <div style="padding: 10px 10px 70px 10px;">
+        <div class="container-fluid" style="min-height: 88vh;">
             {% block content %}
             {% endblock %}
         </div>
     </main>
+
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+        <div class="container text-center">
+          <small>Copyright &copy; Street Life Academy Basquetebol - Lisboa</small> | <small>Site Desenvolvido por <a href="https://www.linkedin.com/in/ana-beatriz-machado-dev/">Beatriz Machado</a></small>
+        </div>
+    </footer>
 </body>
 </html>

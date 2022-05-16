@@ -14,12 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('cadastro/', include('cadastro.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, include
+
+from rest_framework import routers
+
+from cadastro.api import viewsets as cadastroviewsets
 from cadastro import views
+from cadastro.views import CadastroList
+
+
+route = routers.DefaultRouter()
+route.register(r'cadastro/', cadastroviewsets.CadastroViewSet)
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("cadastro.urls", namespace="lista")),
+    path("", include("cadastro.urls", namespace="home")),
     path("lista/", views.CadListView.as_view(), name="list"),
-    #path("<slug:slug>/", views.CadDetailView.as_view(), name="detail")
+    path("api/", include(route.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
