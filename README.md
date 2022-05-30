@@ -1,4 +1,4 @@
-# SLAB---Lisboa
+# SLAB-Lisboa
 Sistema de Gestão da Street Life Academy
 
 Este é um Sitema de Gestao integrada baseada em Django.
