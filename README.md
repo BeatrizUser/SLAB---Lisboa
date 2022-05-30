@@ -3,14 +3,6 @@ Sistema de Gestão da Street Life Academy
 
 Este é um Sitema de Gestao integrada baseada em Django.
 
-- [Links](#links)
-- Recursos
-- Desenvolvimento contínuo
-- [Recursos úteis](#useful-resources)
-- [Autor](#autor)
-- [Agradecimentos](#agradecimentos)
-
-
 ### Captura de tela
 
 ![](./screenshot.png)
