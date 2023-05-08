@@ -28,3 +28,5 @@ Este é um Sitema de Gestao integrada baseada em Django.
 
 Pedro, devo tudo a voçe, cara!
 
+1# make migrate
+2# manage.py runserver

@@ -96,6 +96,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+CSRF_TRUSTED_ORIGINS = ['https://beatrizuser-obscure-space-guacamole-wrrqg4vp99r3594-8000.preview.app.github.dev']
 
 
 # Password validation
